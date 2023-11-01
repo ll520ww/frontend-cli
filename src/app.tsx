@@ -1,7 +1,7 @@
 // 运行时配置
 
 import {MenuFoldOutlined, MenuUnfoldOutlined} from '@ant-design/icons';
-// import {useDispatch} from '@umijs/max';
+import {useDispatch} from '@umijs/max';
 import {message} from 'antd';
 import {useCallback, useEffect, useMemo, useState} from 'react';
 import {HeaderContent} from './components/LayoutRender';
@@ -14,8 +14,6 @@ import queryString from 'query-string';
 const Layout = () => {
     const [collapsed, setCollapsed] = useState(false);
     return {
-        title:"",
-        logo:  "",
         layout: 'mix',
         collapsed: collapsed,
         siderWidth: 208,
@@ -59,39 +57,38 @@ const Layout = () => {
 };
 
 export const layout = Layout;
-//
-// export const request: RequestConfig = {
-//     // other axios options you want
-//     errorConfig: {
-//         errorHandler(res: any) {
-//             if (res.response.status >= 500 && location.pathname !== '/500') {
-//                 location.href = '/500';
-//             }
-//             if (res.response.status === 401) {
-//                 if (location.host.includes('ai-engine.186dt.com')) {
-//                     location.href = 'https://portal.186dt.com/#/login';
-//                 } else {
-//                     location.href = 'https://portal.186dt.com/#/login';
-//                 }
-//             }
-//         },
-//         errorThrower(res: any) {
-//             message.error(res.err.msg);
-//         },
-//     },
-//     requestInterceptors: [
-//         (config: any) => {
-//             // 拦截请求配置，进行个性化处理。
-//             const url = config.url.concat('');
-//             return {...config, url};
-//         },
-//     ],
-//     responseInterceptors: [
-//         (response: any) => {
-//             return response;
-//         },
-//     ],
-//     paramsSerializer(params: any) {
-//         return queryString.stringify(params);
-//     },
-// };
+
+export const request: RequestConfig = {
+    // other axios options you want
+    errorConfig: {
+        errorHandler(res: any) {
+            if (res.response.status >= 500 && location.pathname !== '/500') {
+                location.href = '/500';
+            }
+            if (res.response.status === 401) {
+
+            }
+            if (res.response.status === 404) {
+                message.error("404")
+            }
+        },
+        errorThrower(res: any) {
+            message.error(res.err.msg);
+        },
+    },
+    requestInterceptors: [
+        (config: any) => {
+            // 拦截请求配置，进行个性化处理。
+            const url = config.url.concat('');
+            return {...config, url};
+        },
+    ],
+    responseInterceptors: [
+        (response: any) => {
+            return response;
+        },
+    ],
+    paramsSerializer(params: any) {
+        return queryString.stringify(params);
+    },
+};
