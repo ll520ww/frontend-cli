@@ -38,8 +38,6 @@ export default defineConfig({
         basePath: '/',
     },
     fastRefresh:true,
-    title: '管理平台',
-    // favicon: '/favicon-20200303061548659.ico',
     // 配置主题
     theme: {
         '@primary-color': '#3180F5',
