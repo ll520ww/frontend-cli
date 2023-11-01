@@ -17,7 +17,6 @@ const Layout = () => {
     return {
         layout: 'mix',
         collapsed: collapsed,
-        siderWidth: 208,
         menu: {
             locale: true,
         },
