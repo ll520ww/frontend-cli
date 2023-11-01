@@ -1,9 +1,5 @@
 export default {
-  proxy: {
-    '/number-worker-api': {
-      target: 'https://llz-test.186dt.com',
-      changeOrigin: true,
-    },
+  dev: {
     '/api': {
       target: 'https://llz-test.186dt.com',
       changeOrigin: true,
