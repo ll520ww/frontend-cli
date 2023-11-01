@@ -1,12 +1,10 @@
 // 运行时配置
 
 import {MenuFoldOutlined, MenuUnfoldOutlined} from '@ant-design/icons';
-import {useDispatch} from '@umijs/max';
 import {message} from 'antd';
-import {useCallback, useEffect, useMemo, useState} from 'react';
+import {useState} from 'react';
 import {HeaderContent} from './components/LayoutRender';
 import {Link} from '@umijs/max';
-// import {RequestConfig} from '@umijs/max';
 import queryString from 'query-string';
 import { RequestConfig } from '@umijs/max';
 
