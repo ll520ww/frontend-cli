@@ -1,13 +1,27 @@
-// 全局共享数据示例
-import { DEFAULT_NAME } from '@/constants';
-import { useState } from 'react';
+import {deleteUser} from "@/services/demo/UserController";
 
-const useUser = () => {
-  const [name, setName] = useState<string>(DEFAULT_NAME);
-  return {
-    name,
-    setName,
-  };
-};
 
-export default useUser;
+export default {
+    namespace: "Global",
+    state: {
+        name: "",
+        phone: 0,
+        data: []
+    },
+    effects: {
+        * getList(_: any, {call, put}: any): any {
+            const res = yield call(deleteUser)
+            yield put({
+                type: "save",
+                payload: {
+                    data: res.data.rows
+                }
+            })
+        }
+    },
+    reducers: {
+        save(state: any, action: any) {
+            return {...state, ...action.payload}
+        }
+    }
+}
