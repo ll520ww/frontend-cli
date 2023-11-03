@@ -53,18 +53,3 @@ models/业务名称
 
 编译 npm run build
 
----
-### 启动前置问题（新人）
-
-codeup：个人设置 ==> HTTP密码设置
-
-切公司npm源后： npm login
-
-
-### 规划
-
-- 删除无用依赖、并固定部分依赖
-- 安装NiceModal
-- ahook 使用
-- 替换braft-editor 改用为 wangeditor
-- ...
