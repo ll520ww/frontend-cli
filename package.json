@@ -1,6 +1,6 @@
 {
   "private": true,
-  "author": "",
+  "author": "{{author}}",
   "scripts": {
     "build": "cross-env UMI_ENV=tes max build",
     "build:pro": "cross-env UMI_ENV=pro max build",
@@ -46,6 +46,7 @@
     "prettier-plugin-packagejson": "^2",
     "typescript": "^4.1.2"
   },
-  "name": "frontend",
+  "name": "{{name}}",
+  "description": "{{description}}",
   "version": "1.0.0"
 }
