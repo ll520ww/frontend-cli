@@ -6,8 +6,8 @@ export default defineConfig({
     antd: {},
     access: {},
     model: {},
-    dva:{
-        immer:{}
+    dva: {
+        immer: {}
     },
     initialState: {},
     request: {},
@@ -37,7 +37,7 @@ export default defineConfig({
     manifest: {
         basePath: '/',
     },
-    fastRefresh:true,
+    fastRefresh: true,
     // 配置主题
     theme: {
         '@primary-color': '#3180F5',
@@ -45,27 +45,9 @@ export default defineConfig({
         '@line-height-base': '1.2',
     },
     // links 配置额外的link标签
-    links: [
-        { href: '/Luckysheet/plugins/css/pluginsCss.css', rel: 'stylesheet' },
-        { href: '/Luckysheet/plugins/plugins.css', rel: 'stylesheet' },
-        { href: '/Luckysheet/css/luckysheet.css', rel: 'stylesheet' },
-        { href: '/Luckysheet/assets/iconfont/iconfont.css', rel: 'stylesheet' },
-    ],
+    links: [],
     // <head>里额外的脚本
-    headScripts: [
-        { src: '/Luckysheet/plugins/js/plugin.js' },
-        { src: '/Luckysheet/luckysheet.umd.js' },
-        { src: '/sip.min.js', type: 'text/javascript' },
-        {
-            src:
-                'https://wpk-gate.zjzwfw.gov.cn/static/wpk-jssdk.1.0.2/wpkReporter.js',
-            crossOrigin: 'true',
-        },
-        {
-            src: 'https://cdn.jsdelivr.net/npm/pdfjs-dist@2.14.305/build/pdf.min.js',
-            crossOrigin: 'true',
-        },
-        { src: '/d3.min.js' }
-    ],
+    headScripts: [],
+    favicons: ["https://domain.com/favicon.ico"]
 });
 
