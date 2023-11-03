@@ -2,16 +2,21 @@
 
 import {MenuFoldOutlined, MenuUnfoldOutlined} from '@ant-design/icons';
 import {message} from 'antd';
-import {useState} from 'react';
+import {useEffect, useState} from 'react';
 import {HeaderContent} from './components/LayoutRender';
-import {Link} from '@umijs/max';
+import {Link, useDispatch, RequestConfig} from '@umijs/max';
 import queryString from 'query-string';
-import { RequestConfig } from '@umijs/max';
 
 // 全局初始化数据配置，用于 Layout 用户信息和权限初始化
 // 更多信息见文档：https://next.umijs.org/docs/api/runtime-config#getinitialstate
 const Layout = () => {
     const [collapsed, setCollapsed] = useState(false);
+    const dispatch = useDispatch()
+    useEffect(() => {
+        dispatch({
+            type: "Global/getList",
+        })
+    }, []);
     return {
         layout: 'mix',
         collapsed: collapsed,
