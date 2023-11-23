@@ -20,9 +20,6 @@ export default defineConfig({
     define: {
         ENV: 'test',
     },
-    targets: {
-        ie: 11,
-    },
     alias: {
         '@a': '@/assets/',
         '@c': '@/components/',
