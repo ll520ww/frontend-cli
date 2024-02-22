@@ -41,18 +41,19 @@ const Layout = () => {
             );
         },
         collapsedButtonRender: () => (
-            <div
-                onClick={() => setCollapsed(!collapsed)}
-                style={{
-                    cursor: 'pointer',
-                    fontSize: '16px',
-                    display: 'flex',
-                    justifyContent: 'center',
-                    paddingBottom: '20px',
-                }}
-            >
-                {collapsed ? <MenuUnfoldOutlined/> : <MenuFoldOutlined/>}
-            </div>
+            // <div
+            //     onClick={() => setCollapsed(!collapsed)}
+            //     style={{
+            //         cursor: 'pointer',
+            //         fontSize: '16px',
+            //         display: 'flex',
+            //         justifyContent: 'center',
+            //         paddingBottom: '20px',
+            //     }}
+            // >
+            //     {collapsed ? <MenuUnfoldOutlined/> : <MenuFoldOutlined/>}
+            // </div>
+          <div></div>
         ),
         headerContentRender: () => <HeaderContent/>,
         rightContentRender: () => <></>,
